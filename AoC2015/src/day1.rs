@@ -1,5 +1,5 @@
-#[aoc(day1, part1, Chars)]
-pub fn part1_chars(input: &str) -> i32 {
+#[aoc(day1, part1)]
+pub fn part1(input: &str) -> i32 {
     input.chars().fold(0, |sum, c| match c {
         '(' => sum + 1,
         ')' => sum - 1,
