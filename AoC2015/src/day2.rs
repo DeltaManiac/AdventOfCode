@@ -51,7 +51,7 @@ pub fn text_to_struct(input: &str) -> Vec<Prism> {
 }
 
 #[aoc(day2, part1)]
-pub fn part1(input: &Vec<Prism>) -> u32 {
+pub fn part1(input: &[Prism]) -> u32 {
     input
         .iter()
         .map(|x| x.get_smallest_side_area() + x.get_area())
@@ -61,7 +61,7 @@ pub fn part1(input: &Vec<Prism>) -> u32 {
 }
 
 #[aoc(day2, part2)]
-pub fn part2(input: &Vec<Prism>) -> u32 {
+pub fn part2(input: &[Prism]) -> u32 {
     input
         .iter()
         .map(|x| x.get_smallest_permiter() + (x.x * x.y * x.z))
