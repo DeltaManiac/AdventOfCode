@@ -5,7 +5,7 @@ pub fn part1(input: &str) -> usize {
     let mut last_pos = (0, 0);
     let mut map: HashMap<(i32, i32), u32> = HashMap::new();
     map.insert(last_pos, 0);
-    input.chars().into_iter().for_each(|d| {
+    input.chars().for_each(|d| {
         last_pos = match d {
             '^' => (last_pos.0 + 1, last_pos.1),
             'v' => (last_pos.0 - 1, last_pos.1),
@@ -24,7 +24,7 @@ pub fn part2(input: &str) -> usize {
     let mut last_pos_clone = (0, 0);
     let mut map: HashMap<(i32, i32), u32> = HashMap::new();
     map.insert(last_pos, 0);
-    input.chars().into_iter().enumerate().for_each(|(i, d)| {
+    input.chars().enumerate().for_each(|(i, d)| {
         if i % 2 == 0 {
             last_pos = match d {
                 '^' => (last_pos.0 + 1, last_pos.1),
