@@ -13,21 +13,25 @@ impl<'a> Graph<'a> {
         }
     }
 
-    fn permutations<'b>(collection: &Vec<&'b str>) -> Vec<Vec<&'b str>> {
+    fn permutations<'b>(collection: &[&'b str]) -> Vec<Vec<&'b str>> {
         if collection.len() == 1 {
             return vec![vec![collection[0]]];
         }
         let mut result = vec![];
         for el in collection {
-            for tail in
-                Self::permutations(&collection.iter().filter(|x| *x != el).map(|x| *x).collect())
-            {
+            for tail in Self::permutations(
+                &collection
+                    .iter()
+                    .filter(|x| *x != el)
+                    .copied()
+                    .collect::<Vec<&'b str>>(),
+            ) {
                 let mut whole = vec![*el];
                 whole.extend(tail);
                 result.push(whole.clone())
             }
         }
-        return result;
+        result
     }
 
     fn cheapest(&self) -> u16 {
@@ -81,10 +85,10 @@ fn input_to_graph(input: &str) -> Graph {
         w.next();
         let l = w.next().unwrap().to_string().parse::<u16>().unwrap();
         if !graph.nodes.contains(&s) {
-            graph.nodes.push(s.clone());
+            graph.nodes.push(s);
         }
         if !graph.nodes.contains(&d) {
-            graph.nodes.push(d.clone());
+            graph.nodes.push(d);
         }
         graph.edges.insert((s, d), l);
         graph.edges.insert((d, s), l);
@@ -93,11 +97,11 @@ fn input_to_graph(input: &str) -> Graph {
 }
 
 #[aoc(day9, part1)]
-pub fn part1<'a>(input: &str) -> u16 {
+pub fn part1(input: &str) -> u16 {
     input_to_graph(input).cheapest()
 }
 
 #[aoc(day9, part2)]
-pub fn part2<'a>(input: &str) -> u16 {
+pub fn part2(input: &str) -> u16 {
     input_to_graph(input).costliest()
 }
