@@ -1,5 +1,5 @@
-use std::collections::HashSet;
 use itertools::Itertools;
+use std::collections::HashSet;
 #[aoc_generator(day1)]
 pub fn input_generator(input: &str) -> Vec<u32> {
     input.lines().map(|l| l.parse::<u32>().unwrap()).collect()
@@ -40,13 +40,26 @@ pub fn solve_part2(input: &[u32]) -> u32 {
     0
 }
 
-
 #[aoc(day1, part1, combinator)]
 pub fn combinator_part1(input: &[u32]) -> u32 {
-    input.iter().copied().combinations(2).find(|v| v.iter().sum::<u32>()==2020).unwrap().iter().product()
+    input
+        .iter()
+        .copied()
+        .combinations(2)
+        .find(|v| v.iter().sum::<u32>() == 2020)
+        .unwrap()
+        .iter()
+        .product()
 }
 
 #[aoc(day1, part2, combinator)]
 pub fn combinator_part2(input: &[u32]) -> u32 {
-    input.iter().copied().combinations(3).find(|v| v.iter().sum::<u32>()==2020).unwrap().iter().product()
+    input
+        .iter()
+        .copied()
+        .combinations(3)
+        .find(|v| v.iter().sum::<u32>() == 2020)
+        .unwrap()
+        .iter()
+        .product()
 }
