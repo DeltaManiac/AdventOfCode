@@ -6,7 +6,6 @@ pub struct Policy {
 }
 
 impl Policy {
-
     pub fn is_valid_count(&self) -> bool {
         let count = self
             .password
