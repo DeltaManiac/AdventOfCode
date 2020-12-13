@@ -63,7 +63,7 @@ pub fn part1(inp: &[Ins]) -> i32 {
                 90 => x += u,
                 180 => y += u,
                 270 => x -= u,
-            _ => panic!("the ship can't be rotated {} degrees.", r),
+                _ => panic!("the ship can't be rotated {} degrees.", r),
             },
         }
     }
