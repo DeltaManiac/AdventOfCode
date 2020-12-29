@@ -23,7 +23,7 @@ impl Prism {
         .sum::<u32>()
     }
 
-    pub fn get_smallest_permiter(self) -> u32 {
+    pub fn get_smallest_perimeter(self) -> u32 {
         *[
             2 * (self.x + self.y),
             2 * (self.y + self.z),
@@ -64,7 +64,7 @@ pub fn part1(input: &[Prism]) -> u32 {
 pub fn part2(input: &[Prism]) -> u32 {
     input
         .iter()
-        .map(|x| x.get_smallest_permiter() + (x.x * x.y * x.z))
+        .map(|x| x.get_smallest_perimeter() + (x.x * x.y * x.z))
         .collect::<Vec<u32>>()
         .iter()
         .sum()

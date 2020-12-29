@@ -1,7 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "AoC2015"
+		},
+		{
+			"path": "AoC2020"
 		}
 	],
 	"settings": {

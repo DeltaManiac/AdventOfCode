@@ -24,6 +24,5 @@ pub fn part2(input: &str) -> usize {
             _ => unreachable!(),
         }
     }
-
     unreachable!()
 }
