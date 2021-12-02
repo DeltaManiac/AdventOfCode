@@ -1,17 +1,40 @@
-use itertools::Itertools;
+#[aoc(day2, part1)]
+pub fn solve_part1(input: &str) -> u32 {
+    let mut h = 0;
+    let mut d = 0;
+    input.lines().for_each(|line| {
+        let mut split = line.split_once(' ').unwrap();
+        let arg = split.1.parse::<u32>().unwrap();
 
-#[aoc_generator(day1)]
-pub fn input_generator(input: &str) -> Vec<u32> {
-    input.lines().map(|l| l.parse::<u32>().unwrap()).collect()
+        match split.0 {
+            "forward" => h += arg,
+            "down" => d += arg,
+            "up" => d -= arg,
+            _ => {}
+        }
+    });
+    h * d
 }
 
-#[aoc(day1, part1 )]
-pub fn solve_part1(input: &[u32]) -> usize {
-    0
-}
+#[aoc(day2, part2)]
+pub fn solve_part2(input: &str) -> u32 {
+    let mut h = 0;
+    let mut d = 0;
+    let mut aim = 0;
+    input.lines().for_each(|line| {
+        let mut split = line.split_once(' ').unwrap();
+        let arg = split.1.parse::<u32>().unwrap();
 
-#[aoc(day1, part2 )]
-pub fn solve_part2(input: &[u32]) -> usize {
-    0
-}
+        match split.0 {
+            "forward" => {
+                h += arg;
+                d += aim * arg;
+            }
+            "down" => aim += arg,
+            "up" => aim -= arg,
+            _ => {}
+        }
+    });
 
+    h * d
+}
