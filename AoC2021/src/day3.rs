@@ -1,5 +1,4 @@
-#[aoc(day3, part1)]
-fn solve_part1(input: &str) -> u32 {
+pub fn solve_part1(input: &str) -> u32 {
     let lines = input.lines().collect::<Vec<_>>();
     let mut gamma = 0;
     let mut epsilon = 0;
@@ -20,8 +19,7 @@ fn solve_part1(input: &str) -> u32 {
     gamma * epsilon
 }
 
-#[aoc(day3, part2)]
-fn solve_part2(input: &str) -> i32 {
+pub fn solve_part2(input: &str) -> i32 {
     let lines = input.lines().collect::<Vec<_>>();
     part2_counter(&lines.clone(), true) * part2_counter(&lines.clone(), false)
 }

@@ -11,7 +11,6 @@ pub struct Data {
 
 type Input = Data;
 
-#[aoc_generator(day5)]
 pub fn input_generator(input: &str) -> Data {
     let mut starts = Vec::new();
     let mut ends = Vec::new();
@@ -30,7 +29,6 @@ pub fn input_generator(input: &str) -> Data {
     Data { starts, ends }
 }
 
-#[aoc(day5, part1)]
 pub fn solve_part1(input: &Input) -> usize {
     let mut counter = HashMap::new();
     let walker = input.starts.iter().zip(input.ends.iter());
@@ -62,7 +60,6 @@ pub fn solve_part1(input: &Input) -> usize {
     counter.iter().filter(|(_, v)| **v > 1).count()
 }
 
-#[aoc(day5, part2)]
 pub fn solve_part2(input: &Input) -> usize {
     let mut counter = HashMap::new();
     let walker = input.starts.iter().zip(input.ends.iter());

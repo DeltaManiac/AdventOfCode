@@ -2,7 +2,6 @@ use nalgebra::Matrix5;
 
 pub type Sheet = Matrix5<(u32, bool)>;
 
-#[aoc_generator(day4)]
 pub fn input_generator(input: &str) -> Vec<u32> {
     solve_problem(&parse_input(input))
 }
@@ -67,12 +66,10 @@ fn solve_problem(input: &(Vec<u32>, Vec<Sheet>)) -> Vec<u32> {
     result.to_owned()
 }
 
-#[aoc(day4, part1)]
 pub fn solve_part1(input: &Vec<u32>) -> u32 {
     *input.first().unwrap_or(&0)
 }
 
-#[aoc(day4, part2)]
 pub fn solve_part2(input: &Vec<u32>) -> u32 {
     *input.last().unwrap_or(&0)
 }
