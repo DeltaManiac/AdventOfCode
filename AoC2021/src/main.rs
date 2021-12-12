@@ -1,5 +1,7 @@
 mod day1;
 mod day10;
+mod day11;
+mod day12;
 mod day2;
 mod day3;
 mod day4;
@@ -8,8 +10,6 @@ mod day6;
 mod day7;
 mod day8;
 mod day9;
-
-mod day11;
 aoc_main::main! {
     year 2021;
     day1 : input_generator => solve_part1, solve_part2;
@@ -23,4 +23,5 @@ aoc_main::main! {
     day9 :input_generator=> solve_part1, solve_part2;
     day10 :input_generator=> solve_part1, solve_part2;
     day11 :input_generator=> solve_part1, solve_part2;
+    day12 :input_generator=> solve_part1, solve_part2;
 }
