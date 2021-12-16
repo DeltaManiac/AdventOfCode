@@ -74,7 +74,7 @@ pub fn solve_part2(input: &(Paper, FoldList)) -> usize {
     for y in 0..=y_max {
         let mut line = String::new();
         for x in 0..=x_max {
-            line.push(if manual.contains(&(x, y)) { '#' } else { '.' });
+            line.push(if manual.contains(&(x, y)) { '#' } else { ' ' });
         }
         println!("{}", line);
     }

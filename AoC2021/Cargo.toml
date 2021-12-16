@@ -10,3 +10,4 @@ authors = ["DeltaManiac <maxpaynered@gmail.com>"]
 itertools="0.10.1"
 nalgebra = "0.29.0"
 aoc-main = "0.3.0"
+bitvec="*"
