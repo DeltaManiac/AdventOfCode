@@ -12,6 +12,7 @@ mod day19;
 mod day2;
 mod day20;
 mod day21;
+mod day22;
 mod day3;
 mod day4;
 mod day5;
@@ -42,4 +43,5 @@ aoc_main::main! {
     day19 :input_generator=> solve_part1, solve_part2;
     day20 :input_generator=> solve_part1, solve_part2;
     day21 :input_generator=> solve_part1, solve_part2;
+    day22 :input_generator=> solve_part1, solve_part2;
 }

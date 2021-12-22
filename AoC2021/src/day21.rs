@@ -1,5 +1,3 @@
-#![feature(let_else)]
-
 pub fn input_generator(input: &str) -> (usize, usize) {
     let mut lines = input.lines();
     let player1 = lines.next().expect("at least two player");
