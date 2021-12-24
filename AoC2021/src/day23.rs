@@ -12,8 +12,8 @@ pub fn solve_part1(input: &Vec<Vec<u8>>) -> i64 {
 
 pub fn solve_part2(input: &Vec<Vec<u8>>) -> i64 {
     let mut map = input.clone();
-    map.insert(5, "  #D#C#B#A#  ".bytes().collect());
-    map.insert(2, "  #D#B#A#C#  ".bytes().collect());
+    map.insert(4, "  #D#C#B#A#  ".bytes().collect());
+    map.insert(4, "  #D#B#A#C#  ".bytes().collect());
     shortest_path(&map)
     // 47484
 }
